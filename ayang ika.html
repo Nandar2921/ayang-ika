@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puisi Cinta Friska Ali</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 10px;
+      gap: 10px;
+    }
+
+    .tabs button {
+      background-color: #f3f3f3;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 22px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #555;
+      transition: all 0.3s ease;
+    }
+
+    .tabs button.active {
+      background-color: #d6336c;
+      color: white;
+    }
+
+    .poem {
+      display: none;
+      white-space: pre-line;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    .poem.active {
+      display: block;
+    }
+
+    .author {
+      text-align: right;
+      font-style: italic;
+      margin-top: 30px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .tabs button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Puisi Cinta & Perjuangan</h1>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="puisi1">Nilai Cinta</button>
+      <button class="tab-button" data-tab="puisi2">Bangga & Bersyukur</button>
+      <button class="tab-button" data-tab="puisi3">Berjuang Bersama</button>
+    </div>
+
+    <div id="puisi1" class="poem active">
+Dalam diam kutanam benih ketulusan,  
+Tak berharap lebih, hanya keikhlasan.  
+Dalam luka kutitipkan kepercayaan,  
+Meski hati pernah dikhianati kenyataan.
+
+Konsistensi tak sekadar janji,  
+Tapi hadir setiap hari tanpa henti.  
+Kejujuran bukan sekadar kata,  
+Tapi terang dalam gelapnya rasa.
+
+Komitmen itu bukan paksaan,  
+Tapi ikhlas memilih bertahan.  
+Dan kesetiaan, oh kekal itu,  
+Saat hanya satu hati yang kutuju.
+
+Bersama nilai itu cinta hidup,  
+Bukan sekadar asmara yang meletup.  
+Tapi perjalanan dua insan,  
+Dalam kisah yang terus bertahan.
+
+      <div class="author">— Friska Ali</div>
+    </div>
+
+    <div id="puisi2" class="poem">
+Aku bangga padamu, bukan karena sempurna,  
+Tapi karena kau tak pernah menyerah meski terluka.  
+Dalam sunyi kau tetap bertahan,  
+Dalam gelap, kau jadi cahaya harapan.
+
+Bersyukur aku bisa bersamamu,  
+Dalam tawa, tangis, dan rindu yang syahdu.  
+Tak semua cinta diberi waktu,  
+Tapi kita… kita diberi restu.
+
+Sederhana caraku mencintaimu,  
+Tapi besar syukurku memilikimu.  
+Dalam setiap hari yang kita jalani,  
+Aku tahu—kau anugerah dari Ilahi.
+
+      <div class="author">— Friska Ali</div>
+    </div>
+
+    <div id="puisi3" class="poem">
+Kita bukan cerita instan,  
+Tapi kisah yang penuh perjuangan.  
+Tak selalu mudah, tak selalu tenang,  
+Tapi bersama, kita tetap berjalan.
+
+Aku ingin terus menggenggam tanganmu,  
+Dalam hujan, panas, dan rintangan itu.  
+Karena bersamamu aku kuat,  
+Bersamamu aku tak pernah takut.
+
+Perjuangan ini bukan beban,  
+Tapi bukti cinta yang bertahan.  
+Kita berjuang, bukan hanya untuk hari ini,  
+Tapi untuk esok yang lebih berarti.
+
+      <div class="author">— Friska Ali</div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const poems = document.querySelectorAll('.poem');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.getAttribute('data-tab');
+        poems.forEach(p => {
+          p.classList.remove('active');
+          if (p.id === target) p.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
